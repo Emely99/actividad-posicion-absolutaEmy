@@ -47,9 +47,10 @@
         background-color: purple;
         height: 100px;
     }
-
-    @media (min-width: 720px) {
-        header,section,footer{
+/* Versión tablet */
+@media (min-width: 720px) {
+        /* aquí inician las reglas para tablet*/
+    header,section,footer{
             height:  200px;
     }
         nav{
@@ -75,7 +76,54 @@
         .column section{ 
             height: 200px;
     }
+        /* aquí terminan las reglas para tablet */
+}
+
+/* Versión laptop */
+    @media (min-width: 1024px) {
+        /* aquí inician las reglas para laptop */
+body{
+    background-color: black;
+}
+nav{
+    background-color: grey;
+    height: 600px;
+}
+header{
+    background-color: aliceblue;
+    height: 150px;
+}
+.column section { 
+    background-color:beige;
+    height: 250px;
+}
+
+footer {
+    background-color: palevioletred;
+    height: 90px;
+}
+
+    /* aquí terminan las reglas para laptop */
     }
+/* Versión desktop */
+    @media (min-width: 1440px) {
+        /* aquí inician las reglas para desktop */
+ nav{
+    background-color: yellowgreen;
+    height: 600px;
+}
+ header {
+    background-color:blue;
+    height: 100px;
+}
+footer {
+    background-color: royalblue;
+    height: 80px;
+}
+      
+    /* aquí terminan las reglas para desktop */
+    }
+    
 </style>
 
 <body>
