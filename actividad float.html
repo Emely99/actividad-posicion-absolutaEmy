@@ -4,7 +4,8 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="with=device-width">
-	<title>Estructuras con flexbox</title>
+	<title>Estructuras con flexbox grid</title>
+    <link rel="stylesheet" href="flexboxgrid.css">
 </head>
 <style>
 	/* Aquí va el código CSS */
@@ -17,12 +18,10 @@
         height: 100px;
         margin-bottom: 16px;
     }
-    .column{
-        margin-bottom: 20px;
-    }
     .column section{ 
         background-color: blueviolet;
         height: 100px;
+        
     }
 
     header{
@@ -30,10 +29,10 @@
         margin-bottom: 16px;
         height: 100px;
     }
-    section{
+    .column section, .column header{ 
+        padding: 20px;
         margin-bottom: 16px;
     }
-
 
     footer{
         width: 100%;
@@ -41,34 +40,25 @@
         height: 100px;
     }
 /* Versión tablet */
-@media (min-width: 720px) {
+@media (min-width: 768px) {
         /* aquí inician las reglas para tablet*/
-    .container{
-            display: flex;
-            gap: 20px;
-    }
+    
         nav{
-            width: 20%;
             height: 600px;
-           
+            vertical-align: top;
     }
-        .column{
-            width: 77%;
-            margin-left: 2%;
-            height: auto;
-          
-    }
-        header{
-            display: inline-block;
-            width: 100%;
+
+        header, section{
+           margin-bottom: 0;
         }
-        section{
-            display: inline-block;
-            width: 100%;
+        .column section, .column header{
+           height: 190px;
         }
-        .column section{ 
+
+        footer{
             height: 200px;
-    }
+        }
+     
         /* aquí terminan las reglas para tablet */
 }
 
@@ -78,41 +68,18 @@
 
 header{
     background-color: aliceblue;
-    height: 90px;
-    justify-content: center;
-}
-.container { 
-    align-items: flex-end;
-    flex-direction:row-reverse;
-    justify-content: space-between;
-    
 }
 body{
     background-color: black;
 }
 nav{
     background-color: grey;
-    height: 500px;
 }
 .column section { 
     background-color:beige;
-    height: 250px;
-    align-items: flex-end;
-}
-section,header {
-    margin-bottom: 0%;
-    width: 100%;
-   
-}
-.column { 
-    margin-left: 0%;
-    row-gap: 20px;
-    display: flex;
-    flex-flow: row wrap;
 }
 footer {
-    background-color: palevioletred;
-    height: 70px;
+    background-color: palevioletred;   
 }
 
     /* aquí terminan las reglas para laptop */
@@ -122,26 +89,14 @@ footer {
         /* aquí inician las reglas para desktop */
  nav{
     background-color: yellowgreen;
-    height: 600px;
 }
 
  header {
     background-color:blue;
-    height: 100px;
-    flex-basis: 100%;
 }
-.column section{
-    flex-basis: 49%;
-}
-.column{
-    column-gap: 20px;
-}
-.container{
-    align-items: center;
-}
+
 footer {
     background-color: royalblue;
-    height: 80px;
 }
       
     /* aquí terminan las reglas para desktop */
@@ -151,26 +106,32 @@ footer {
 
 <body>
     <div class="container">
-        <nav> 
-            <h1>Nav</h1>
-        </nav>
-        
-        <section class="column">
-            <header>
-                <h1>Header</h1>
-            </header>
-            <section>
-                <h1>Section 1</h1>
-            </section>
-            <section>
-                <h1>Section 2</h1>
-            </section>
+        <div class="row">
+            <nav class="col-xs-12 col-sm-3 col-md-4">
+                <h1 class="box"> Nav</h1>
+            </nav>
+            <section class="column col-xs-12 col-sm-9 col-md-8">
+                <div class="box">
+                    <div class="row">
+                        <header class="col-xs-12">
+                                <h1 class="box">Header</h1>
+                            </header>
+                            <section class="col-xs-12">
+                                <h1 class="box">Section 1 </h1> 
+                            </section>
+                            <section class="col-xs-12">
+                                <h1 class="box">Section 2 </h1> 
+                         </section>
+                    </div>
+                 </div>     
         </section>
+        <footer class="col-xs-12">
+            <h1 class="box"> footer</h1>
+        </footer>
+        </div>
+    
         
     </div>
-    
-    <footer>
-        <h1>footer</h1>
-    </footer>
-    
+  
 </body>
+</html>
